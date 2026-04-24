@@ -1,0 +1,60 @@
+<!-- 安否報告画面 -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>安否報告 | 安否確認システム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>安否確認システム</h1>
+    <h2>安否報告画面</h2>
+
+    <p>名前：アウン</p>
+    <p>部署：システム開発部</p>
+
+    <form action="complete.html">
+      <div class="form-group">
+        <p>現在の状況を選んでください</p>
+
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="safe" name="status" value="無事">
+            <label for="safe">無事です</label>
+          </div>
+
+          <div class="radio-item">
+            <input type="radio" id="injured" name="status" value="けが">
+            <label for="injured">けがをしています</label>
+          </div>
+
+          <div class="radio-item">
+            <input type="radio" id="cannotWork" name="status" value="出社できない">
+            <label for="cannotWork">出社できません</label>
+          </div>
+
+          <div class="radio-item">
+            <input type="radio" id="help" name="status" value="助けが必要">
+            <label for="help">助けが必要です</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">コメント</label>
+        <textarea id="comment" name="comment" rows="5" placeholder="今の状況を入力してください"></textarea>
+      </div>
+
+      <button type="submit">送信</button>
+    </form>
+
+    <div class="link-area">
+      <a href="list.html">安否一覧を見る</a>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
