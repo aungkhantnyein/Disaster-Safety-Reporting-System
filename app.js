@@ -1,36 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ===== Login Page =====
-  const loginForm = document.querySelector("form");
+  // Login page
+  const loginForm = document.getElementById("loginForm");
 
-  if (window.location.pathname.includes("index.html")) {
+  if (loginForm) {
     loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
       const employeeId = document.getElementById("employeeId").value.trim();
       const password = document.getElementById("password").value.trim();
 
       if (employeeId === "" || password === "") {
-        e.preventDefault();
         alert("社員番号とパスワードを入力してください。");
+        return;
+      }
+
+      if (employeeId.toLowerCase() === "admin") {
+        alert("管理者としてログインしました。");
+        window.location.href = "admin.html";
       } else {
         alert("ログイン成功（ダミー）");
+        window.location.href = "report.html";
       }
     });
   }
 
-  // ===== Report Page =====
-  if (window.location.pathname.includes("report.html")) {
-    loginForm.addEventListener("submit", function (e) {
-      const selectedStatus = document.querySelector(
-        'input[name="status"]:checked'
-      );
+  // Report page
+  const reportForm = document.querySelector('form[action="complete.html"]');
 
-      if (!selectedStatus) {
+  if (reportForm) {
+    reportForm.addEventListener("submit", function (e) {
+      const statusSelect = reportForm.querySelector("select");
+      const selectedStatus = statusSelect.value;
+
+      if (selectedStatus === "選択してください") {
         e.preventDefault();
         alert("現在の状況を選んでください。");
         return;
       }
 
-      const confirmSend = confirm("この内容で送信しますか？");
+      const confirmSend = confirm("「" + selectedStatus + "」で送信しますか？");
 
       if (!confirmSend) {
         e.preventDefault();
