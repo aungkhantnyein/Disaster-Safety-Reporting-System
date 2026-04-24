@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規社員登録 | 安否確認システム</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>安否確認システム</h1>
+    <h2>新規社員登録</h2>
+
+    <form action="employees.html">
+
+        <div class="form-group">
+            <label>社員番号</label>
+            <input type="text" placeholder="例：A000">
+        </div>
+
+        <div class="form-group">
+            <label>氏名</label>
+            <input type="text" placeholder="例：山田 太郎">
+        </div>
+
+        <div class="form-group">
+            <label>アカウント</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>パスワード</label>
+            <input type="password" placeholder="8文字以上で入力">
+        </div>
+
+        <div class="form-group">
+            <label>パスワード確認</label>
+            <input type="password" placeholder="もう一度パスワードを入力してください">
+        </div>
+
+        <div class="form-group">
+            <label>部署</label>
+            <select>
+                <option>選択してください</option>
+                <option>総務部</option>
+                <option>人事部</option>
+                <option>営業部</option>
+                <option>開発部</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>権限</label><br>
+
+            <input type="radio" name="role" checked>
+            一般社員
+
+            <br>
+
+            <input type="radio" name="role">
+            管理者
+        </div>
+
+        <button type="submit">登録する</button>
+
+    </form>
+
+    <div class="link-area">
+        <a href="employees.html">戻る</a>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
